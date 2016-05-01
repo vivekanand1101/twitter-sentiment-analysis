@@ -161,7 +161,7 @@ def main():
     args = parser.parse_args()
     if not any([args.search or args.user]):
         print 'Either search or get tweets of a user'
-        print 'Use either: --user vivekanand1101 or --search #Amazon'
+        print 'Use either: --user vivekanand1101 or --search \'#Amazon\''
         return
 
     if args.search and args.user:
