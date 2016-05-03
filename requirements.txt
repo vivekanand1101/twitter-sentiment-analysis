@@ -1,0 +1,5 @@
+jsonrpclib==0.1.7
+lxml==3.6.0
+nltk==3.2.1
+requests==2.10.0
+twitter==1.17.1
