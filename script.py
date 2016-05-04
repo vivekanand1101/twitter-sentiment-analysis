@@ -23,10 +23,10 @@ def data_pre_processing(tweet):
     ex: :) - positive, :( - negative
     step 3: Remove the stop words
     ex: this -
-    step 4: Replace user tags with ||U||
-    ex: @vivekanand1101 - ||U||
-    step 5: Replace the links with ||L||
-    ex: http://facebook.com = ||L||
+    step 4: Replace user tags with ||T||
+    ex: @vivekanand1101 - ||T||
+    step 5: Replace the links with ||U||
+    ex: http://facebook.com = ||U||
     step 6: Replace all the negations with "NOT"
     ex: not, no, never, n't, cannot - NOT
     '''
@@ -54,7 +54,7 @@ def data_pre_processing(tweet):
     #replace the negations
     for token in range(len(tokens)):
         if tokens[token].startswith('http') or tokens[token].startswith('www'):
-            tokens[token] = '||L||'
+            tokens[token] = '||U||'
 
         elif tokens[token].startswith('@'):
             tokens[token] = '||T||'
@@ -121,9 +121,9 @@ def process(tweets, details):
 
     print 'The overall sentiment of the recieved tweets is: '
     if overall > 0:
-        print 'Positive'
+       print 'Positive'
     else:
-        print 'Negative'
+       print 'Negative'
 
 
 class Tweets():
